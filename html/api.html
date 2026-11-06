@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Hany Samir API</title>
+    <meta name="description" content="Project API access for Hany Samir projects" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn.discordapp.com/embed/avatars/0.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="../js/discord-avatar.js" defer></script>
+    <script src="../js/favicon.js" defer></script>
+  </head>
+  <body data-theme="dark">
+    <nav class="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="api-page-brand">Hany Samir</a>
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-menu" id="nav-menu">
+          <a href="index.html#home" class="nav-link" data-i18n="navHome">Home</a>
+          <a href="index.html#about" class="nav-link" data-i18n="navAbout">About</a>
+          <a href="index.html#projects" class="nav-link" data-i18n="navProjects">Projects</a>
+          <a href="api.html" class="nav-link active" data-i18n="navApi">API</a>
+          <a href="index.html#contact" class="nav-link" data-i18n="navContact">Contact</a>
+          <div class="language-switcher">
+            <label class="sr-only" for="language-select" data-i18n="languageLabel">Language</label>
+            <select id="language-select" aria-label="Language">
+              <option value="en">English</option>
+              <option value="ar">العربية</option>
+              <option value="fr">Français</option>
+              <option value="it">Italiano</option>
+              <option value="tr">Türkçe</option>
+            </select>
+          </div>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <main class="api-page-main">
+      <section class="api api-page-section">
+        <div class="container">
+          <a class="api-page-back cta-button secondary" href="index.html">
+            <i class="fas fa-arrow-left"></i>
+            <span data-i18n="navHome">Home</span>
+          </a>
+
+          <div class="section-header api-page-header">
+            <h1 class="section-title">
+              <span class="section-number">API.</span>
+              <span data-i18n="projectApiDirectory">Project API Access</span>
+            </h1>
+            <p class="section-subtitle" data-i18n="projectApiDescription">
+              Choose a project to get its data using the project ID.
+            </p>
+          </div>
+
+          <div class="api-content">
+            <div class="api-endpoint-card">
+              <div class="api-endpoint-header">
+                <i class="fas fa-link api-endpoint-icon"></i>
+                <h2 data-i18n="apiEndpoint">API Endpoint</h2>
+              </div>
+              <div class="api-url-container">
+                <code class="api-url" id="api-url">/api/v2/projects/{projectId}</code>
+                <button class="api-copy-btn" id="api-copy-btn" aria-label="Copy API URL">
+                  <i class="fas fa-copy"></i>
+                  <span class="copy-text" data-i18n="copy">Copy</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="project-api-directory">
+              <div class="api-example-header">
+                <h2 data-i18n="projectApiDirectory">Project API Access</h2>
+              </div>
+              <div id="project-api-list" class="project-api-list">
+                <p class="project-api-empty" data-i18n="loadingProjects">Loading projects...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="../js/i18n.js" defer></script>
+    <script src="../js/api.js" defer></script>
+    <script src="../js/api-page.js" defer></script>
+    <script src="../js/main.js" defer></script>
+  </body>
+</html>

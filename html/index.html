@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title data-i18n="pageTitle">Hany Samir</title>
+    <meta
+      name="description"
+      content="Hany Samir - passionate about clean code, performance, and open source"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://cdn.discordapp.com/embed/avatars/0.png"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/ScrollTrigger.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body data-theme="dark">
+    <div id="particles-js"></div>
+    <audio id="bg-music" src="../audio/music.mp3" loop preload="auto"></audio>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo"></div>
+        <button
+          class="hamburger"
+          id="hamburger"
+          aria-label="Toggle menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-menu" id="nav-menu">
+          <a href="#home" class="nav-link" data-i18n="navHome">Home</a>
+          <a href="#about" class="nav-link" data-i18n="navAbout">About</a>
+          <a href="#projects" class="nav-link" data-i18n="navProjects">Projects</a>
+          <a href="api.html" class="nav-link" data-i18n="navApi">API</a>
+          <a href="#contact" class="nav-link" data-i18n="navContact">Contact</a>
+
+          <div class="music-control" id="music-control">
+            <button id="music-toggle" class="music-toggle" aria-label="Toggle music" title="Toggle music">
+              <i class="fas fa-volume-mute"></i>
+            </button>
+            <input
+              type="range"
+              id="music-volume"
+              class="music-volume"
+              min="0"
+              max="100"
+              value="50"
+              aria-label="Volume"
+            />
+          </div>
+
+          <div class="language-switcher">
+            <label class="sr-only" for="language-select" data-i18n="languageLabel">Language</label>
+            <select id="language-select" aria-label="Language">
+              <option value="en">English</option>
+              <option value="ar">العربية</option>
+              <option value="fr">Français</option>
+              <option value="it">Italiano</option>
+              <option value="tr">Türkçe</option>
+            </select>
+          </div>
+
+          <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+            <i class="fas fa-moon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <section id="home" class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="hero-title">
+              <span class="title-line">
+                <span class="hologram-text" id="name-changer" data-text="아부 알훈">아부 알훈</span>
+              </span>
+            </h1>
+            <p class="hero-subtitle"></p>
+            <p class="hero-description">
+                <span data-i18n-html="heroDescription">Passionate about <span class="highlight">clean code</span>, <span class="highlight">performance</span>, and <span class="highlight">open source</span></span>
+            </p>
+            <div class="hero-buttons">
+              <a href="#projects" class="cta-button primary">
+                <i class="fas fa-code"></i>
+                <span data-i18n="viewWork">View My Work</span>
+              </a>
+              <a href="#contact" class="cta-button secondary">
+                <i class="fas fa-envelope"></i>
+                <span data-i18n="getInTouch">Get In Touch</span>
+              </a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <div class="profile-container">
+              <div class="profile-glow"></div>
+              <img
+                id="profile-img"
+                src="https://cdn.discordapp.com/embed/avatars/0.png"
+                alt="아부 알훈 Profile"
+                class="profile-img"
+                loading="eager"
+              />
+              <div class="profile-border"></div>
+            </div>
+          </div>
+        </div>
+        <div class="scroll-indicator">
+          <div class="scroll-line"></div>
+          <span class="scroll-text" data-i18n="scrollDown">Scroll Down</span>
+          <i class="fas fa-chevron-down scroll-arrow"></i>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="section-number">01.</span>
+            <span data-i18n="aboutTitle">About Me</span>
+          </h2>
+        </div>
+        <div class="about-content">
+          <div class="about-text">
+            <p data-i18n-html="aboutParagraphOne">
+    Hi, I'm <strong>Hany Samir</strong> — a developer from Egypt with a
+    passion for building modern, high-performance web applications. What
+    started as curiosity has become a lifelong dedication to clean code
+    and thoughtful design.
+  </p>
+  <p data-i18n-html="aboutParagraphTwo">
+    I work with modern web technologies and constantly push myself to
+    learn new frameworks and tools. I believe great software is built on
+    a foundation of performance, simplicity, and user experience — and
+    that's what I strive for in every project.
+            </p>
+            <div class="tech-stack">
+              <div class="tech-grid">
+                <span class="tech-item">
+                  <i class="fab fa-python"></i>Python
+                </span>
+                <span class="tech-item">
+                  <i class="fab fa-js-square"></i>JavaScript
+                </span>
+                <span class="tech-item">
+                  <i class="fab fa-js-square" style="color: #3178c6"></i>TypeScript
+                </span>
+                <span class="tech-item">
+                  <i class="fab fa-git-alt"></i>Git
+                </span>
+                <span class="tech-item">
+                  <i class="fab fa-html5" style="color: #e34f26"></i>HTML5
+                </span>
+                <span class="tech-item">
+                  <i class="fab fa-css3-alt" style="color: #1572b6"></i>CSS3
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="about-stats">
+            <div class="stat-card">
+              <div class="stat-number" data-count="50">0</div>
+              <div class="stat-label" data-i18n="projectsCompleted">Projects Completed</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-count="3">0</div>
+              <div class="stat-label" data-i18n="yearsExperience">Years Experience</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" data-count="100">0</div>
+              <div class="stat-label" data-i18n="githubRepositories">GitHub Repositories</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="section-number">02.</span>
+            <span data-i18n="featuredProjects">Featured Projects</span>
+          </h2>
+          <p class="section-subtitle">
+            <span data-i18n="projectsSubtitle">A collection of projects that showcase my skills and passion for development</span>
+          </p>
+        </div>
+
+        <div id="projects-loading" class="loading-container">
+          <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p data-i18n="loadingProjects">Loading projects...</p>
+          </div>
+        </div>
+
+        <div id="projects-error" class="error-container" style="display: none">
+          <div class="error-card">
+            <i class="fas fa-exclamation-triangle error-icon"></i>
+            <h3 data-i18n="unableProjects">Unable to load projects</h3>
+            <p id="error-message">
+              <span data-i18n="projectsError">There was an issue fetching projects.</span>
+            </p>
+            <button id="retry-btn" class="cta-button primary">
+              <i class="fas fa-redo"></i>
+              <span data-i18n="tryAgain">Try Again</span>
+            </button>
+          </div>
+        </div>
+
+        <div
+          id="projects-grid"
+          class="projects-grid"
+          style="display: none"
+        ></div>
+      </div>
+    </section>
+
+    <section id="api" class="api">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="section-number">03.</span>
+            <span data-i18n="apiAccess">API Access</span>
+          </h2>
+          <p class="section-subtitle">
+  <span data-i18n="apiSubtitle">Integrate my projects into your own applications with ease</span>
+          </p>
+        </div>
+
+        <div class="api-content">
+          <div class="api-endpoint-card">
+            <div class="api-endpoint-header">
+              <i class="fas fa-link api-endpoint-icon"></i>
+              <h3 data-i18n="apiEndpoint">API Endpoint</h3>
+            </div>
+
+            <div class="api-url-container">
+              <code class="api-url" id="api-url">/api/v2/projects/{projectId}</code>
+              <button class="api-copy-btn" id="api-copy-btn" aria-label="Copy API URL">
+                <i class="fas fa-copy"></i>
+                <span class="copy-text" data-i18n="copy">Copy</span>
+              </button>
+            </div>
+
+<div class="api-info">
+  <div class="api-info-item">
+    <i class="fas fa-info-circle"></i>
+    <span data-i18n="easyIntegration">Easy integration</span>
+  </div>
+  <div class="api-info-item">
+    <i class="fas fa-bolt"></i>
+    <span data-i18n="highPerformance">High performance</span>
+  </div>
+  <div class="api-info-item">
+    <i class="fas fa-shield-alt"></i>
+    <span data-i18n="safeFree">Safe and free to use</span>
+  </div>
+</div>
+            <a class="cta-button primary api-page-link" href="api.html">
+              <i class="fas fa-list"></i>
+              <span data-i18n="openProjectApi">Open Project API</span>
+            </a>
+          </div>
+
+          <div class="api-examples">
+<div class="api-example-card recommended">
+  <div class="api-example-header">
+    <i class="fab fa-js-square" style="color: #f7df1e"></i>
+    <h3>JavaScript</h3>
+    <span class="recommended-badge">
+      <i class="fas fa-star"></i>
+      <span data-i18n="recommended">Recommended</span>
+    </span>
+    <button class="api-copy-code" data-target="js-code" aria-label="Copy JavaScript code">
+      <i class="fas fa-copy"></i>
+    </button>
+  </div>
+                <pre class="api-code"><code id="js-code">fetch("http://localhost:3000/api/v2/projects/1354011147")
+  .then((response) => response.json())
+  .then((data) => {
+      console.log("Project:", data.name);
+      console.log("Stars:", data.stars);
+  })
+  .catch((error) => console.error("Error:", error));</code></pre>
+            </div>
+
+            <div class="api-example-card">
+              <div class="api-example-header">
+                <i class="fab fa-python" style="color: #3776ab"></i>
+                <h3>Python</h3>
+                <button class="api-copy-code" data-target="py-code" aria-label="Copy Python code">
+                  <i class="fas fa-copy"></i>
+                </button>
+              </div>
+                <pre class="api-code"><code id="py-code">import requests
+
+BASE_URL = "http://localhost:3000"
+response = requests.get(f"{BASE_URL}/api/v2/projects/1354011147")
+data = response.json()
+
+for project in data['projects']:
+    print(f"{project['name']} - ⭐ {project['stars']}")</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">
+            <span class="section-number">04.</span>
+            <span data-i18n="letsConnect">Let's Connect</span>
+          </h2>
+          <p class="section-subtitle">
+            <span data-i18n="contactSubtitle">Ready to bring your ideas to life? Let's build something amazing together</span>
+          </p>
+        </div>
+        <div class="contact-content">
+          <div class="contact-cta">
+            <h3 data-i18n="connectHeading">Let's connect!</h3>
+            <p class="contact-text">
+              <span data-i18n="contactText">Available on Discord, WhatsApp, and Email — pick what works best for you</span>
+            </p>
+            <div class="contact-buttons">
+              <a
+                href="https://discord.com/users/1111249680660181012"
+                class="cta-button primary large"
+                target="_blank"
+                rel="noopener"
+              >
+                <i class="fab fa-discord"></i>
+                <span data-i18n="connectDiscord">Connect on Discord</span>
+              </a>
+              <a
+                href="mailto:info@abualhoun.com"
+                class="cta-button secondary large"
+              >
+                <i class="fas fa-envelope"></i>
+                <span data-i18n="sendEmail">Send Email</span>
+              </a>
+            </div>
+            <p class="contact-email-list">
+              <a href="mailto:info@abualhoun.com">info@abualhoun.com</a>
+              <span aria-hidden="true">&middot;</span>
+              <a href="mailto:support@abualhoun.com">support@abualhoun.com</a>
+            </p>
+
+            <div class="contact-social-icons">
+              <a
+                href="https://wa.me/@abualhun/"
+                class="contact-social-icon whatsapp"
+                target="_blank"
+                rel="noopener"
+                aria-label="WhatsApp"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a
+                href="https://facebook.com/abualhun"
+                class="contact-social-icon facebook"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://instagram.com/abualhun.2001"
+                class="contact-social-icon instagram"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://github.com/Abu-al-Hun"
+                class="contact-social-icon github"
+                target="_blank"
+                rel="noopener"
+                aria-label="GitHub"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://www.npmjs.com/~hanysamir"
+                class="contact-social-icon npm"
+                target="_blank"
+                rel="noopener"
+                aria-label="npm"
+              >
+                <i class="fab fa-npm"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-left">
+            <div class="footer-logo">
+              <span class="logo-bracket">&lt;</span>
+              <span class="logo-name" id="footer-name-changer">아부 알훈</span>
+              <span class="logo-bracket">/&gt;</span>
+            </div>
+<p class="footer-description">
+  <span data-i18n="footerDescription">Turning ideas into elegant functional code</span>
+</p>
+          </div>
+          <div class="footer-right">
+            <div class="social-links">
+              <a
+                href="https://github.com/Abu-al-Hun"
+                class="social-link github"
+                target="_blank"
+                rel="noopener"
+                aria-label="GitHub"
+              >
+                <i class="fab fa-github"></i>
+              </a>
+              <a
+                href="https://facebook.com/abualhun"
+                class="social-link facebook"
+                target="_blank"
+                rel="noopener"
+                aria-label="Facebook"
+              >
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a
+                href="https://instagram.com/abualhun.2001"
+                class="social-link instagram"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+              >
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a
+                href="https://discord.com/users/1111249680660181012"
+                class="social-link discord"
+                target="_blank"
+                rel="noopener"
+                aria-label="Discord"
+              >
+                <i class="fab fa-discord"></i>
+              </a>
+              <a
+                href="https://wa.me/@abualhun/"
+                class="social-link whatsapp"
+                target="_blank"
+                rel="noopener"
+                aria-label="WhatsApp"
+              >
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a
+                href="https://www.npmjs.com/~hanysamir"
+                class="social-link npm"
+                target="_blank"
+                rel="noopener"
+                aria-label="npm"
+              >
+                <i class="fab fa-npm"></i>
+              </a>
+              <a
+                href="mailto:info@abualhoun.com,support@abualhoun.com"
+                class="social-link email"
+                aria-label="Email"
+              >
+                <i class="fas fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p class="footer-copyright"><span class="copyright-symbol">&copy;</span><span class="copyright-year-range">2023:<span id="current-year">2026</span></span>&nbsp;<span class="copyright-name">Hany Samir</span>&nbsp;<span class="copyright-rights" data-i18n="allRightsReserved">All rights reserved</span></p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/i18n.js" defer></script>
+    <script src="../js/discord-avatar.js" defer></script>
+    <script src="../js/favicon.js" defer></script>
+    <script src="../js/name-changer.js" defer></script>
+    <script src="../js/api.js" defer></script>
+    <script src="../js/particles.js" defer></script>
+    <script src="../js/projects.js" defer></script>
+    <script src="../js/animations.js" defer></script>
+    <script src="../js/main.js" defer></script>
+  </body>
+</html>
